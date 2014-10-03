@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en" ng-app="phonecat" ng-controller="PhonecatAppCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title>Phone Gallery: {{query}}</title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body>
+    <div>
+      Search:
+      <input ng-model="query" placeholder="Enter keyword to filter"/>
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetic</option>
+        <option value="age">Newest</option>
+      </select>
+    </div>
+    <div>
+      <ul>
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+          {{phone.name}}
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
