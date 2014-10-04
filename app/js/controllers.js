@@ -1,11 +1,13 @@
 'use strict';
 
-var app = angular.module('phonecat', []);
+var m = angular.module('phonecatControllers', []);
 
-app.controller('PhonecatAppCtrl', ['$scope', '$http', function($scope, $http){
+m.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http){
   $http.get('phones/phones.json').success(function(data){
     $scope.phones = data;
   });
   $scope.orderProp = 'age';
 }]);
+
+m.controller('PhoneDetailCtrl', function(){});
 

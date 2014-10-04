@@ -1,29 +1,17 @@
 <!doctype html>
 
-<html lang="en" ng-app="phonecat" ng-controller="PhonecatAppCtrl">
+<html lang="en" ng-app="phonecat">
   <head>
     <meta charset="utf-8">
-    <title>Phone Gallery: {{query}}</title>
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <title>Phone Phone Gallery</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
   </head>
   <body>
-    <div>
-      Search:
-      <input ng-model="query" placeholder="Enter keyword to filter"/>
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetic</option>
-        <option value="age">Newest</option>
-      </select>
-    </div>
-    <div>
-      <ul>
-        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-          {{phone.name}}
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul>
-    </div>
+    <div ng-view></div>
   </body>
 </html>

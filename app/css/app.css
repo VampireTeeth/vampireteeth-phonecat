@@ -1,0 +1,24 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+}
+
+.phones {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.thumb {
+  float: left;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  height: 100px;
+  width: 100px;
+}
+
+.phones li {
+  clear: both;
+  height: auto;
+  padding-top: 15px;
+}
