@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('phonecat', ['ngRoute', 'phonecatControllers']);
+var app = angular.module('phonecat', ['ngRoute', 'phonecatControllers', 'phonecatFilters']);
 
 var routeProvider = function ($routeProvider){
   $routeProvider.

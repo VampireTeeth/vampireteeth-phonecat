@@ -1,13 +1,30 @@
 'use strict';
 
-var m = angular.module('phonecatControllers', []);
+var phonecatControllers = angular.module('phonecatControllers', []);
 
-m.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http){
+function PhoneListCtrl($scope, $http) {
   $http.get('phones/phones.json').success(function(data){
     $scope.phones = data;
   });
   $scope.orderProp = 'age';
-}]);
+}
 
-m.controller('PhoneDetailCtrl', function(){});
+function PhoneDetailCtrl($scope, $routeParams, $http) {
+  $http.get('phones/' + $routeParams.phoneId + '.json')
+    .success(function(data){
+    $scope.phone = data;
+  });
+}
+
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http', PhoneListCtrl]);
+
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', PhoneDetailCtrl]);
+
+
+
+
+
+
+
+
 
