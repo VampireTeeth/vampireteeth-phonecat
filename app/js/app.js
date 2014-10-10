@@ -15,6 +15,6 @@ var routeProvider = function ($routeProvider){
     otherwise({
       redirectTo: '/phones'
     });
-} 
+};
 
 app.config(['$routeProvider',routeProvider]);
